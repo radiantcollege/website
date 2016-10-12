@@ -1,0 +1,61 @@
+<div class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ site.author.domain }}">{{ site.author.name }}</a>
+    </div>
+    <div class="navbar-collapse collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ site.baseurl }}/index.html">Home</a></li>
+        <li><a href="##">News</a></li>
+        <li class="dropdown">
+          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">History
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)">2016</a></li>
+            <li><a href="javascript:void(0)">2015</a></li>
+            <li><a href="javascript:void(0)">2014</a></li>
+            <li><a href="javascript:void(0)">2013</a></li>
+            <li><a href="javascript:void(0)">2012</a></li>
+            <li><a href="javascript:void(0)">2011</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Departments
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:void(0)">Science</a></li>
+            <li><a href="javascript:void(0)">Commerce</a></li>
+            <li><a href="javascript:void(0)">Arts</a></li>
+            <li class="divider"></li>
+            <li class="dropdown-header">Others</li>
+            <li><a href="##">Activities</a></li>
+          </ul>
+        </li>
+        <li><a href="javascript:void(0)">Information</a></li>
+        <li><a href="{{ site.baseurl }}/contact.html">Contact</a></li>
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input class="form-control col-md-8" placeholder="Search" type="text">
+        </div>
+      </form>
+    </div>
+
+        {% if site.avatar and (layout.show-avatar or page.show-avatar) %}
+          <div class="avatar-container">
+            <div class="avatar-img-border">
+                <a href="{{ site.author.domain }}">
+                <img class="avatar-img" src="{{ site.avatar | prepend: site.baseurl | replace: '//', '/' }}" />
+              </a>
+            </div>
+          </div>
+        {% endif %}
+  </div>
+</div>

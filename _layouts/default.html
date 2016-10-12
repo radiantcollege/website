@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% include meta.html %}
+      <title>{{ site.title }}</title>
+      {% include css.html %}
+      <script src="{{ site.baseurl }}/javascripts/jquery-1.12.4.min.js"></script>
+  </head>
+  <body>
+      <!-- nav.html contains a container. nested container does not work. -->
+      {% include nav.html %}
+    	{{ content }}
+      {% include footer.html %}
+      {% include javascripts.html %}
+  </body>
+</html>

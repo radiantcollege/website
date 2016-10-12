@@ -1,0 +1,106 @@
+    <!-- Material Design for Bootstrap -->
+<!--<script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.9/js/material.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.9/js/ripples.min.js"></script-->
+    <script src="{{ site.baseurl }}/javascripts/material.min.js"></script>
+    <script src="{{ site.baseurl }}/javascripts/ripples.min.js"></script>
+
+    <script src="{{ site.baseurl }}/javascripts/main.js"></script>
+    
+    <!-- Material Design Lite -->
+    <!--<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>-->
+    <script>
+        $.material.init();
+    </script>
+
+    <!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+    <!-- jQuery library -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
+    <!--<script src="{{ site.baseurl }}/javascripts/jquery-1.12.4.min.js"></script>-->
+
+    <!-- Bootstrap -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    <script src="{{ site.baseurl }}/javascripts/bootstrap.min.js"></script>
+
+    <!-- Material Design for Bootstrap -->
+    <!-- Sliders -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+    <script>
+    $(function () {
+      $.material.init();
+          $(".shor").noUiSlider({
+                start: 40,
+                connect: "lower",
+              range: {
+                     min: 0,
+                     max: 100
+                   }
+           });
+           $(".svert").noUiSlider({
+                  orientation: "vertical",
+                  start: 40,
+                 connect: "lower",
+                  range: {
+                         min: 0,
+                         max: 100
+                        }
+                  });
+        });
+    </script>
+
+
+    <!-- Dropdown.js -->
+    <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+    <script>
+        $("#dropdown-menu select").dropdown();
+    </script>
+
+    <!-- Math support  -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script>
+  (function () {
+
+      var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; &gt;</div>").click(function () {
+        var index = $('.bs-component').index($(this).parent());
+        $.get(window.location.href, function (data) {
+          var html = $(data).find('.bs-component').eq(index).html();
+          html = cleanSource(html);
+          $("#source-modal pre").text(html);
+          $("#source-modal").modal();
+        })
+      });
+
+      $('.bs-component [data-toggle="popover"]').popover();
+      $('.bs-component [data-toggle="tooltip"]').tooltip();
+
+      $(".bs-component").hover(function () {
+        $(this).append($button);
+        $button.show();
+      }, function () {
+        $button.hide();
+      });
+
+      function cleanSource(html) {
+        var lines = html.split(/\n/);
+        lines.shift();
+        lines.splice(-1, 1);
+        var indentSize = lines[0].length - lines[0].trim().length,
+        re = new RegExp(" {" + indentSize + "}");
+        lines = lines.map(function (line) {
+          if (line.match(re)) {
+            line = line.substring(indentSize);
+          }
+          return line;
+        });
+
+        lines = lines.join("\n");
+        return lines;
+      }
+
+      $(".icons-material .icon").each(function () {
+          $(this).after("<br><br><code>" + $(this).attr("class").replace("icon ", "") + "</code>");
+      });
+  })();
+
+</script>
+<script src="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.js"></script>
