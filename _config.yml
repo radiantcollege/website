@@ -53,7 +53,7 @@ smart_quotes:   lsquo,rsquo,ldquo,rdquo
 enable_coderay: false
 
 # custom site settings
-url:                       https://asdf.com
+url:                       https://radiantcollege.github.io
 title:                     "Welcome to Radiant College Dergaon website!"
 description:               "A junior college in science, commerce and arts, providing quality education and inclusive development of the students."
 google-site-verification:  ppp
