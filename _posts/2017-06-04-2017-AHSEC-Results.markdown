@@ -1,0 +1,13 @@
+---
+layout: post
+title: Welcome to Radiant College Dergaon!
+subtitle: A junior college of Science and Arts.
+category: Posts
+date:   2017-06-04 03:11:07 +0530
+---
+  <div class="col-sm-12">
+  <h2>Results</h2>
+  <article class="text-primary">2017 AHSEC Results:
+  </article>
+</div>
+
